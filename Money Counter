@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Money Counter</title><meta name="DESCRIPTION" content="Enter how much money do u need to convert, and find the total.- app by Archana">
+    <meta name="KEYWORDS" content="money, change, coins, bill, money counter">
+    <link rel="shortcut icon" href="#">
+   <!-- style start here -->
+    <style>
+        body{
+           
+            margin: 0 auto;
+            text-align: center;
+        }
+        .container{            
+            width: 40%;
+        }
+        table{
+          padding: 10px;
+        } 
+        .red{
+          background-color: red;
+          color: white;
+          border-style: none;
+          width:100%;
+          height: 39px;
+          font-size: 15px;
+        }
+        .green{
+          background-color: green;
+          color: white;
+          font-size: 15px;
+          border-style: none;
+        }
+        .width{
+          width:100px;
+        }
+    </style>
+    <!-- style end here -->
+</head>
+<body>
+  <!--HTML body content>-->
+   <div class="header"><h1> BOI Money Counter</h1></div> 
+      <form name="coinform">       
+         <center>
+          <div class="container" id="total">
+            <table  border="1" width="50%" align="center">
+              <tr bgColor="aqua">
+                <td bgColor="aqua">&#8377 2000 </td>
+                <td> x &nbsp;
+                  <input type="text" name="twothousand" size="3">
+                </td>
+              </tr > 
+              <tr bgColor="aqua">
+                <td >&#8377 500</td>
+                <td > x &nbsp;
+                  <input type="text" name="fivehundred" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>&#8377 200</td>
+                <td> x &nbsp;
+                  <input type="text" name="twohundred" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>&#8377 100</td>
+                <td> x &nbsp;
+                  <input type="text" name="hundred" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>&#8377 50</td>
+                <td> x &nbsp;
+                  <input type="text" name="fifty" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>&#8377 20</td>
+                <td> x &nbsp;
+                  <input type="text" name="twenty" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>&#8377 10</td>
+                <td> x &nbsp;
+                  <input type="text" name="ten" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>Coin 5</td>
+                <td> x &nbsp;
+                  <input type="text" name="five" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>Coin 2</td>
+                <td > x &nbsp;
+                  <input type="text" name="two" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td>Coin 1</td>
+                <td> x &nbsp;
+                  <input type="text" name="one" size="3">
+                </td>
+              </tr>
+              <tr bgColor="aqua">
+                <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr bgColor="aqua">
+                <td class="width">
+                <input class="green"  type="button" name="calc" value="Calculate" onClick="money(this.form)" size="2">
+                <input type="text" name="total" size="10"></td> 
+                <td><input class="red"type="reset" value="Reset" size="2"></td>
+              </tr>
+              <br/>                      
+          </table>
+        </div>
+      </center>
+    </form>  
+<!-- HTML ends here -->
+<!-- javascript start -->
+    <script>
+    let tAmount;
+    let num;
+    function sum(tquantity, amount){
+      quantity=tquantity*1;    // convert string to NaN 
+      num= (!quantity?0:parseInt(quantity))*amount; // to check wheather quantity is mentioned or not if not then take 0 value 
+      console.log(num)
+      //to check for NaN condition
+      if(isNaN(quantity)){       
+        alert(`'${tquantity}' not a valid number hence its not included in total`)
+        return 0;
+      }
+      else{
+        return num;
+      }      
+    }
+      function money(form){
+        //get input value from form
+        twothousand=sum(form.twothousand.value,2000);
+        fivehundred=sum(form.fivehundred.value, 500);
+        let twohundred =sum(form.twohundred.value, 200);
+        let hundred = sum(form.hundred.value, 100);
+        let fifty =sum(form.fifty.value, 50);
+        let twenty =sum(form.twenty.value, 20);
+        let ten = sum(form.ten.value, 10);
+        let five = sum(form.five.value, 5);
+        let two = sum(form.two.value, 2);
+        let one = sum(form.one.value, 1);
+
+        let totalAmount=twothousand + fivehundred + twohundred + hundred + fifty + twenty + ten + five + two + one;//to calculate amount
+        console.log (totalAmount);
+        form.total.value=totalAmount.toLocaleString('en-US');//to add comma seprator in total amount
+      }
+    </script>
+ </body>
+</html>
