@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+    width: 100%;
+
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    background-color: #eee7e7;
+  }
+  
+  .output {    
+    color: green;
+    text-shadow: 2em;
+    background-color: lightcoral;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .gif{
+    width: 100%;
+    height: 300px;
+    background-image: url("fireworksImage.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-origin: border-box;
+    background-position: center;
+    text-align: center;
+    font-size:40px;
+    font-weight: bold;
+    color: white;
+    padding-top: 40px;
+  }
+  #button{
+    background-color: blue;
+    color: white;
+  }
+  #reset{
+    background-color: green;
+    color: white;
+  }
